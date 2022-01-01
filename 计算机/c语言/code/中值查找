@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int a[]={10,20,30,40,50,60,70,80,90};
+	int b;
+	scanf("%d",&b);
+	int l=0,r=8,m=(l+r)/2;
+	while(a[m]!=b&&l<=r){
+	  if(b<a[m]) r=m-1;m=(l+r)/2;printf("++");
+	  if(b>a[m]) l=m+1;m=(l+r)/2;printf("--");
+	}  
+	if(a[m]==b) printf("yes");
+	else printf("no");
+	return 0;
+}
