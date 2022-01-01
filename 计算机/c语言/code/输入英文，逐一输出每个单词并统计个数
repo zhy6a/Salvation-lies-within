@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<string.h> 
+int main()
+{
+	int i=0,count=0;          //字符下标，单词计数 
+	char str[400];            
+	printf("请输入一串英文");
+	gets(str);          //逐个输入字符 
+	int len;
+	len = strlen(str);
+	char *st;
+	st=(char *)malloc(len*sizeof(char));
+	st=str;
+	for(i=0;str[i]!='\0';i++)  //逐个读入字符 
+	  if(str[i]!=' ')          //字符不是空白 
+	  {
+	  	putchar(str[i]);     //输入字符 
+	  	if(str[i-1]==' '||i==0)//前一个字符为0，或第一个字符 
+	  	count++;  //累加计数 
+	  }
+	else
+	    if(str[i-1]!=' ')  //只考虑一个空白 
+	      putchar('\n');
+    printf("\n单词个数=%d\n",count);//单词计数 
+    free((void *)st);
+    return 0;
+}
