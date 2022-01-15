@@ -1,0 +1,42 @@
+//法1 
+int fun(int a,int b)
+{
+	int c,tmp;
+	if(a<b){
+		tmp=a; a=b; a=tmp;
+	} c=a;
+	while(c%a!=0||c%b!=0)
+	     c++;
+	return c;
+}
+int main()
+{
+	int a,b;
+	printf("输入两个数字");
+	scanf("%d %d",&a,&b);
+	printf("最小公倍数为%d",fun(a,b));
+}
+法2 辗转相除：两个数的乘积为最小公倍数*最大公约数 
+int fun1(int a,int b)  
+{
+	int tmp,y;
+	if(a<b){
+		tmp=a; a=b; b=tmp;
+	}
+	while(y=a%b!=0){
+		a=b;
+		b=y;
+	} return b;公约数 
+}
+int fun2(int a,int b,int c)
+{
+     	return(a*b/c);
+} 
+int main(){
+	int a,b,y;
+	printf("请输入两个数");
+	scanf("%d %d",&a,&b);
+	y=fun1(a,b);
+	y=fun2(a,b,y);
+	printf("最小公倍数为%d",y);
+}
