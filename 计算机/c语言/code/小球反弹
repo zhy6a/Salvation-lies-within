@@ -1,0 +1,22 @@
+/*一球从100米高度自由落下，每次落地后反跳回原高度的一半，再落下。求它在第10次落地时，共经过多少米？第10次落地后又反弹多高？*/
+int main()
+{
+	float s(int n);
+	float h(int n);
+	printf("第10次反弹高度：%f 米\n",h(10));
+	printf("第10次落地的路程: %f 米",s(10));
+	
+}
+float h(int n){
+	double a;
+	if(n==0) a=100.0;
+	else a=h(n-1)/2.0;
+	return a;
+}
+float s(int n){
+	float b;
+	if(n==0) b=0.0;
+	else if(n==1) b=100.0;
+	else b=s(n-1)+2.0*h(n-1);
+	return (b); 
+}
