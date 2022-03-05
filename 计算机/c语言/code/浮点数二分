@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+    double l=5.0,r=9.0;
+    const double eps = 1e-6;  
+    while (r - l > 1e-6)
+    {
+        double mid = (l + r) / 2;
+        if (2*pow(mid,2)-19*mid+cos(mid)+24>0) r = mid;
+        else l = mid;
+    }
+    printf("%lf",l);
+}
